@@ -12,8 +12,22 @@
 
 </head>
   
-<body>
-  
+<body onload="redirectByMobileOS()">
+  <script>
+function redirectByMobileOS() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+//for Android
+    if (/android/i.test(userAgent)) {
+        window.location.href = "https://oderuk.github.io/m/";
+    }
+
+//For iPhone / iPad / iPod  (iOS
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://oderuk.github.io/m/";
+    }
+}
+</script>
     <a href="https://tinyurl.com/2p9x7a77">Redirecting after 60 seconds.... To redirect now click here.</a>
   
 </body>
